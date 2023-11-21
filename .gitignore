@@ -1,0 +1,32 @@
+# Virtual environments
+venv/
+env/
+*.env
+.env/
+
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python cache
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db

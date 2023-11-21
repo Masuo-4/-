@@ -1,0 +1,33 @@
+enp1s0f1
+enx207bd237b3f0
+
+brctl addbr br0
+
+ブリッジにIPアドレスを割り当てる
+brctl addbr br0
+ip add addr 192.168.0.1 dev br0
+
+ブリッジ化のためにネットワークポートのIPアドレスを消去
+ip addr flush enp1s0f1
+ip addr flush enx207bd237b3f0
+
+ブリッジにネットワークポートを紐づける。
+brctl addif br0 enp1s0f1
+brctl addif br0 enx207bd237b3f0
+
+ネットワークポートをプロミスキャスモードに設定
+ip link set dev enp1s0f1 promisc on
+ip link set dev enx207bd237b3f0 promisc on
+
+ネットワークポートを起動
+ip link set dev enp1s0f1 up
+ip link set dev enx207bd237b3f0 up
+
+#ブリッジの起動
+ip link set dev br0 up
+
+最後に
+brctl show
+で確認
+
+
